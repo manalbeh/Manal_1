@@ -15,9 +15,9 @@ class HomeController extends AbstractController
         return new Response(content: "Hello World !");
     }
     #[Route('/about/{entier}', name: 'app_about', requirements: ['entier' => '\d+'])]
-    public function about(string $entier = "776"): Response
+    public function about(int $entier = 776): Response
     {
-        return new Response(content: "Hello ".$entier);
+        return new Response(content: "Hello ".$entier."!");
     }
     #[Route('/about/contact', name: 'contact_about')]
     public function contact(): Response
